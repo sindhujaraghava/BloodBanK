@@ -26,9 +26,10 @@ namespace BloodBanK.Models
             // optionsBuilder.UseSqlServer("Data Source=DESKTOP-NDS1S0S\\SQLEXPRESS;Initial Catalog=BBMS;Integrated Security=true;");
 
         }
-
+        public DbSet<Slot> slots { get; set; }
+        public DbSet<Hospital> hospitals { get; set; } 
         public DbSet<User> users { get; set; }
-        public DbSet<BloodReq> Reqs { get; set; }
+        public DbSet<BloodReq> reqs { get; set; }
         
 
     }

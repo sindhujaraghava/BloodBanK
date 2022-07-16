@@ -1,0 +1,74 @@
+﻿<div class="container mb-4">
+    <a href="~/Slot/Add" class="btn btn-success">Add SLot</a>
+</div>
+
+<h1 class="">List Of Available Slots</h1>
+
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr class="bg-success text-white">
+            <th>Hospital Name</th>
+            <th>Slot Time</th>
+            <th>Actions</th>
+        </tr>
+        @{
+            try
+            {
+                if(TempData["Slots"]!=null)
+                {
+                    foreach(var x in (List<BloodBanK.Models.Slot>)TempData["Slots"])
+                    {
+                        <tr>
+                        <td>@x.HospitalName</td>
+                        <td>@x.SlotTime</td>
+                        <td>
+                        <a href="~/Slot/Edit?SlotId=@x.SlotId" class="btn btn-warning">Edit</a>
+
+                         <a href="~/Slot/Delete?SlotId=@x.SlotId" class="btn btn-danger" style="margin-left:3%">Delete</a>
+                        </td>
+                         </tr>
+                    }
+                }
+            }
+            catch
+            {
+                
+            }
+        }
+    </table>
+
+</div>
+
+
+
+@{
+    try
+    {
+        if(TempData["EditMsg"] !=null)
+        {
+              <script>
+                swal("Good job!", "Data Updated Sucecssfully!", "success");
+           </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}
+
+@{
+    try
+    {
+        if(TempData["DeleteMsg"] !=null)
+        {
+              <script>
+                swal("Good job!", "Data Deleted Sucecssfully!", "success");
+           </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}

@@ -1,0 +1,118 @@
+﻿<div class="container mb-4">
+    <a href="~/Admin/Add" class="btn btn-success">Add Donor</a>
+</div>
+
+<h1 class="">List Of Blood Donors</h1>
+
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr class="bg-success text-white">
+            <th>UserName</th>
+            <th>Name</th>
+            <th>BloodGroup</th>
+            <th>Age</th>
+            <th>PhoneNo</th>
+            <th>Actions</th>
+        </tr>
+        @{
+            try
+            {
+                if(TempData["Donor"]!=null)
+                {
+                    foreach(var x in (List<BloodBanK.Models.User>)TempData["Donor"])
+                    {
+                        <tr>
+                        <td>@x.UserName</td>
+                        <td>@x.FirstName @x.LastName</td>
+                        <td>@x.BloodGroup</td>
+                        <td>@x.Age</td>
+                        <td>@x.ContactNumber</td>
+                        <td>
+                        <a href="~/Admin/Edit?UserName=@x.UserName" class="btn btn-warning">Edit</a>
+
+                         <a href="~/Admin/Delete?UserName=@x.UserName" class="btn btn-danger" style="margin-left:3%">Delete</a>
+                        </td>
+                         </tr>
+                    }
+                }
+            }
+            catch
+            {
+                
+            }
+        }
+    </table>
+
+</div>
+
+
+
+@{
+    try
+    {
+        if(TempData["EditMsg"] !=null)
+        {
+              <script>
+                swal("Good job!", "Data Updated Sucecssfully!", "success");
+           </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}
+
+@{
+    try
+    {
+        if(TempData["DeleteMsg"] !=null)
+        {
+              <script>
+                swal("Good job!", "Data Deleted Sucecssfully!", "success");
+           </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}
+<h1 class='m-4'>List Of Blood Requirements</h1>
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr class="bg-success text-white">
+            <th>RequirementId</th>
+            <th>Name</th>
+            <th>BloodGroup</th>
+            <th>PhoneNo</th>
+            <th>Actions</th>
+        </tr>
+        @{
+            try
+            {
+                if(TempData["BloodReq"]!=null)
+                {
+                    foreach(var x in (List<BloodBanK.Models.BloodReq>)TempData["BloodReq"])
+                    {
+                        <tr>
+                        <td>@x.ReqId</td>
+                        <td>@x.PatientName</td>
+                        <td>@x.BloodGroup</td>
+                        <td>@x.PatientPhoneNo</td>
+                        <td>
+                            <a href="~/User/Edit?id=@x.ReqId" class="btn btn-warning">Edit</a>
+                            <a href="~/User/Delete?id=@x.ReqId" class="btn btn-danger" style="margin-left:3%">Delete</a>
+                         </td>
+                            </tr>
+                    }
+                }
+            }
+            catch
+            {
+                
+            }
+        }
+    </table>
+
+</div>

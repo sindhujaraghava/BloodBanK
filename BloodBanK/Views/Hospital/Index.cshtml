@@ -1,0 +1,80 @@
+﻿<div class="container mb-4">
+    <a href="~/Hospital/Add" class="btn btn-success">Add Hospital</a>
+</div>
+
+<h1 class="">List Of Hospitals</h1>
+
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr class="bg-success text-white">
+            <th>Hospital Name</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Area</th>
+            <th>PinCode</th>
+            <th>Actions</th>
+        </tr>
+        @{
+            try
+            {
+                if(TempData["Hospitals"]!=null)
+                {
+                    foreach(var x in (List<BloodBanK.Models.Hospital>)TempData["Hospitals"])
+                    {
+                        <tr>
+                        <td>@x.HospitalName</td>
+                        <td>@x.State</td>
+                        <td>@x.City</td>
+                        <td>@x.Area</td>
+                        <td>@x.Pincode</td>
+                        <td>
+                        <a href="~/Hospital/Edit?HospitalName=@x.HospitalName" class="btn btn-warning">Edit</a>
+
+                         <a href="~/Hospital/Delete?HospitalName=@x.HospitalName" class="btn btn-danger" style="margin-left:3%">Delete</a>
+                        </td>
+                         </tr>
+                    }
+                }
+            }
+            catch
+            {
+                
+            }
+        }
+    </table>
+
+</div>
+
+
+
+@{
+    try
+    {
+        if(TempData["EditMsg"] !=null)
+        {
+              <script>
+                swal("Good job!", "Data Updated Sucecssfully!", "success");
+           </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}
+
+@{
+    try
+    {
+        if(TempData["DeleteMsg"] !=null)
+        {
+              <script>
+                swal("Good job!", "Data Deleted Sucecssfully!", "success");
+           </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}

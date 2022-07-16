@@ -22,11 +22,11 @@ namespace BloodBanK.Controllers
                     var user = users.FirstOrDefault();
 
                     HttpContext.Session.SetInt32("Role", user.RoleId);
-                    HttpContext.Session.SetString("Name", user.FirstName+" "+user.LastName);
+                    HttpContext.Session.SetString("Name", user.FirstName + " " + user.LastName);
                     HttpContext.Session.SetString("UserName", user.UserName);
                     if (user.RoleId == 101)
                     {
-                        return RedirectToAction("Index", "Dashboard");
+                        return RedirectToAction("Index", "Admin");
                     }
                     if (user.RoleId == 102)
                     {
@@ -69,7 +69,7 @@ namespace BloodBanK.Controllers
                 }
             }
 
-            return RedirectToAction("Login","Accounts");
+            return RedirectToAction("Login", "Accounts");
         }
 
         public IActionResult Logout()

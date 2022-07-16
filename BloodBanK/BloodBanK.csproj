@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Dashboard\**" />
+    <Compile Remove="Views\User\**" />
+    <Content Remove="Views\Dashboard\**" />
+    <Content Remove="Views\User\**" />
+    <EmbeddedResource Remove="Views\Dashboard\**" />
+    <EmbeddedResource Remove="Views\User\**" />
+    <None Remove="Views\Dashboard\**" />
+    <None Remove="Views\User\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\images\blood.jpg" />
   </ItemGroup>
 
@@ -27,8 +38,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
   </ItemGroup>
 
 </Project>

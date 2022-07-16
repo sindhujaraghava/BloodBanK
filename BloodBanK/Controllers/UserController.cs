@@ -14,13 +14,13 @@ namespace BloodBanK.Controllers
             }
             using (BBMSContext db = new BBMSContext())
             {
-                TempData["BloodReq"] = db.Reqs.ToList();
+                TempData["BloodReq"] = db.reqs.ToList();
 
             }
             TempData["UserName"] = HttpContext.Session.GetString("UserName");
             return View();
         }
-        public IActionResult Add()
+       /* public IActionResult Add()
         {
 
             var list = new List<string>() { "A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-" };
@@ -111,6 +111,6 @@ namespace BloodBanK.Controllers
 
             }
             return RedirectToAction("Index", "User");
-        }
+        }*/
     }
 }
