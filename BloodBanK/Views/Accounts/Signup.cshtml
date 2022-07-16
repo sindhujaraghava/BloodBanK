@@ -1,0 +1,133 @@
+﻿@model BloodBanK.Models.User
+
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<div class="row">
+    <div class="col-6">
+        <h3 class="text-danger">Online BloodBank</h3>
+        <h4 class="" style="color:darkblue">Get Signup and Save a Life</h4>
+        <img src="~/images/donate_is_help.jpg"  alt="donate image" class="img-fluid text-center mt-4 pt-4" />
+    </div>
+    <div class="col-4 border rounded shadow w-50">
+        <form asp-action="Signup">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="hstack gap-5">
+            <div class="form-group w-50">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="hstack gap-3">
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="hstack gap-3 mt-3">
+                <div>Gender</div>
+            <div class="form-check">
+                <input asp-for="Gender" class="form-check-input" type="radio" name="gender" value="Male" id="gender1">
+                    <label class="form-check-label" for="gender1">
+                        Male
+                    </label>
+            </div>
+            <div class="form-check">
+                <input asp-for="Gender" class="form-check-input" type="radio" name="gender" value="Female" id="gender2">
+                    <label class="form-check-label" for="gender2">
+                        Female
+                    </label>
+            </div>
+            <div class="form-check">
+                <input asp-for="Gender" class="form-check-input" type="radio" name="gender" value="Trans" id="gender3">
+                    <label class="form-check-label" for="gender3">
+                        Trans
+                    </label>
+            </div>
+            </div>
+            </div>
+            <div class="hstack gap-5">
+            <div class="form-group w-50">
+                <label asp-for="ContactNumber" class="control-label"></label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BloodGroup" class="control-label"></label>
+                @Html.DropDownListFor(model=>model.BloodGroup,new SelectList(ViewBag.list),"----Select Your Blood Group----",htmlAttributes:new{@class="form-control"})
+                <span asp-validation-for="BloodGroup" class="text-danger"></span>
+            </div>
+            <div class="hstack gap-4">
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Area" class="control-label"></label>
+                <input asp-for="Area" class="form-control" />
+                <span asp-validation-for="Area" class="text-danger"></span>
+            </div>
+          <div class="form-group">
+                <label asp-for="Pincode" class="control-label"></label>
+                <input asp-for="Pincode" class="form-control" />
+                <span asp-validation-for="Pincode" class="text-danger"></span>
+            </div>
+
+            </div>
+            <div class="hstack gap-5">
+             <div class="form-group w-50">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoleId" class="control-label"></label>
+                <input asp-for="RoleId" class="form-control" />
+                <span asp-validation-for="RoleId" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="hstack gap-3 my-3 ms-5">
+            <div class="form-group offset-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div>
+                <a href="~/Accounts/login">Already Have Account? LogIn Here</a>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
