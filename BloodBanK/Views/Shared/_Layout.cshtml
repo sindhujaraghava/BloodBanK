@@ -6,10 +6,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BloodBanK</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <!-- Tempus Dominus Styles -->
     <link rel="stylesheet" href="~/lib/tempus-dominus/css/tempus-dominus.min.css" />
-    <link rel="stylesheet" href="~/lib/jqueryui/jquery-ui.min.css" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BloodBanK.styles.css" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/0746ee12f3.js" crossorigin="anonymous"></script>
@@ -81,16 +82,15 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/jqueryui/jquery-ui.min.js"></script>
+         
     <!-- Popperjs -->
-    <script src="~/lib/popper.js/umd/popper.min.js"></script>
-
+    <script src="~/lib/popper.js/umd/popper.min.js" asp-append-version="true"></script>
+        
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
     
     <!-- Tempus Dominus JavaScript -->
     <script src="~/lib/tempus-dominus/js/tempus-dominus.min.js"></script>
-    
+
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

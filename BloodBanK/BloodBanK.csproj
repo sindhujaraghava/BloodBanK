@@ -9,12 +9,16 @@
   <ItemGroup>
     <Compile Remove="Views\Dashboard\**" />
     <Compile Remove="Views\User\**" />
+    <Compile Remove="wwwroot\lib\jqueryui\**" />
     <Content Remove="Views\Dashboard\**" />
     <Content Remove="Views\User\**" />
+    <Content Remove="wwwroot\lib\jqueryui\**" />
     <EmbeddedResource Remove="Views\Dashboard\**" />
     <EmbeddedResource Remove="Views\User\**" />
+    <EmbeddedResource Remove="wwwroot\lib\jqueryui\**" />
     <None Remove="Views\Dashboard\**" />
     <None Remove="Views\User\**" />
+    <None Remove="wwwroot\lib\jqueryui\**" />
   </ItemGroup>
 
   <ItemGroup>

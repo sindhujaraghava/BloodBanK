@@ -1,25 +1,10 @@
 {
   "version": "1.0",
-  "defaultProvider": "jsdelivr",
+  "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "library": "@eonasdan/tempus-dominus@6.0.0-alpha1.0.4",
-      "destination": "wwwroot/lib/eonasdan/tempus-dominus/"
-    },
-    {
-      "provider": "cdnjs",
-      "library": "popper.js@2.11.5",
-      "destination": "wwwroot/lib/popper.js/"
-    },
-    {
-      "provider": "cdnjs",
-      "library": "tempus-dominus@6-alpha1",
+      "library": "tempus-dominus@6.0.0-beta9",
       "destination": "wwwroot/lib/tempus-dominus/"
-    },
-    {
-      "provider": "cdnjs",
-      "library": "jqueryui@1.12.1",
-      "destination": "wwwroot/lib/jqueryui/"
     }
   ]
 }

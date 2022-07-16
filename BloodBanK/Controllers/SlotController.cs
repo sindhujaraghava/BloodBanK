@@ -21,18 +21,21 @@ namespace BloodBanK.Controllers
             var list = new List<string>();
             using (BBMSContext db = new BBMSContext())
             { 
-                list= db.hospitals.Select(x => x.HospitalName).ToList();
-                ViewBag.list = list;
+               list= db.hospitals.Select(x => x.HospitalName).ToList();
+               
             }
-                return View();
+            ViewBag.list = list;
+            return View();
         }
 
         [HttpPost]
         public IActionResult Add(Slot s)
         {
+            var list = new List<string>();
             s.SlotId = Guid.NewGuid();
             using (BBMSContext db = new BBMSContext())
             {
+                list = db.hospitals.Select(x => x.HospitalName).ToList();
                 db.slots.Add(s);
                 if (db.SaveChanges() > 0)
                 {
@@ -44,6 +47,7 @@ namespace BloodBanK.Controllers
                     TempData["status"] = "0";
                 }
             }
+            ViewBag.list = list;
 
             return RedirectToAction("Index", "Slot");
         }
