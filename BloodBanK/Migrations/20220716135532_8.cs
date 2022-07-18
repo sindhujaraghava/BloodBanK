@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BloodBanK.Migrations
 {
-    public partial class BloodBank : Migration
+    public partial class _8 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

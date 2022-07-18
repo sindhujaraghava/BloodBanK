@@ -24,7 +24,9 @@ namespace BloodBanK.Models
         [ForeignKey("Slot")]
         public Guid SlotId { get; set; }
         [JsonIgnore]
-        public Slot Slot { get; set; } 
-        
+        public Slot Slot { get; set; }
+        [JsonIgnore]
+        public string HospitalName  { get; set; }
+
     }
 }

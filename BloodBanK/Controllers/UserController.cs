@@ -20,14 +20,21 @@ namespace BloodBanK.Controllers
             TempData["UserName"] = HttpContext.Session.GetString("UserName");
             return View();
         }
-       /* public IActionResult Add()
+       public IActionResult Add()
         {
 
             var list = new List<string>() { "A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-" };
             ViewBag.list = list;
+            var hospitals = new List<string>();
+            using (BBMSContext db = new BBMSContext())
+            {
+                hospitals = db.hospitals.Select(x => x.HospitalName).ToList();
+
+            }
+            ViewBag.hospitals = hospitals;
             return View();
         }
-        [HttpPost]
+       /* [HttpPost]
         public IActionResult Add(BloodReq st)
         {
             var list = new List<string>() { "A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-" };

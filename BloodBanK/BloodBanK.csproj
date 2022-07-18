@@ -26,6 +26,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Views\User\Add.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\User\Add.cshtml" />
+    <None Include="Views\User\Edit.cshtml" />
+    <None Include="Views\User\Index.cshtml" />
     <None Include="wwwroot\images\donate_is_help.jpg" />
     <None Include="wwwroot\images\OIP %281%29.jpg" />
   </ItemGroup>
